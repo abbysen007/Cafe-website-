@@ -1,0 +1,6 @@
+{
+  "name": "BREW. — Specialty Coffee & AR Cafe",
+  "description": "A luxury, cinematic specialty coffee experience with interactive 3D Augmented Reality food & beverage menu.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

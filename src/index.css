@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #140A06;
+    color: #F5E9DA;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle background grain simulation */
+.bg-grain {
+  background-image: radial-gradient(rgba(200, 149, 107, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Luxury radial glow */
+.radial-glow-hero {
+  background: radial-gradient(circle at 50% 45%, rgba(200, 149, 107, 0.22) 0%, rgba(43, 24, 16, 0.4) 45%, transparent 70%);
+}
+
+.radial-glow-accent {
+  background: radial-gradient(circle, rgba(200, 149, 107, 0.15) 0%, transparent 70%);
+}
+
+/* Marquee infinite animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Button Shimmer Sweep Effect */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-160%);
+  }
+  30% {
+    transform: translateX(160%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-sweep 4s ease-in-out infinite;
+}
+
+
+/* Floating animation for coffee cup */
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+.animate-bob {
+  animation: bobbing 5.5s ease-in-out infinite;
+}
+
+/* Steam particles */
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(0.8) scaleY(0.8);
+  }
+  30% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-90px) scaleX(1.4) scaleY(1.3);
+  }
+}
+
+.steam-particle-1 {
+  animation: steam-rise 3.8s ease-out infinite;
+}
+.steam-particle-2 {
+  animation: steam-rise 4.4s ease-out 1.2s infinite;
+}
+.steam-particle-3 {
+  animation: steam-rise 3.4s ease-out 2.1s infinite;
+}
+
+/* Floating beans animation */
+@keyframes float-bean-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(12px, -18px) rotate(15deg); }
+}
+
+@keyframes float-bean-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-15px, -12px) rotate(-20deg); }
+}
+
+.animate-float-bean-1 {
+  animation: float-bean-1 7s ease-in-out infinite;
+}
+
+.animate-float-bean-2 {
+  animation: float-bean-2 6.2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #140A06;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E1B13;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8956B;
+}
+
+/* Model Viewer Custom Styling */
+model-viewer {
+  width: 100%;
+  height: 100%;
+  --progress-bar-color: #C8956B;
+  --progress-bar-height: 3px;
+  background-color: transparent;
+}
+
+/* Leaflet Dark OpenStreetMap styling */
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+.leaflet-container {
+  background-color: #140A06 !important;
+  font-family: inherit;
+}
+
+.leaflet-bar a {
+  background-color: #1A0F0A !important;
+  color: #F5E9DA !important;
+  border-color: rgba(200, 149, 107, 0.3) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #C8956B !important;
+  color: #140A06 !important;
+}
+
+.leaflet-control-attribution {
+  background-color: rgba(20, 10, 6, 0.8) !important;
+  color: rgba(245, 233, 218, 0.5) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #C8956B !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
